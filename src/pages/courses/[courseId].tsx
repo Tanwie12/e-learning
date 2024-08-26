@@ -1,5 +1,6 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from "react";
+import { useRouter } from "next/router";
+import Enroll from "../../components/EnrollButton";
 
 type Course = {
   id: string;
@@ -15,11 +16,12 @@ const CourseDetails: React.FC = () => {
 
   // Example data, replace with dynamic data fetching based on courseId
   const course: Course = {
-    id: 'course-1',
-    title: 'React for Beginners',
-    description: 'Learn the basics of React, a popular JavaScript library for building user interfaces.',
-    content: 'This is where the course content will go...',
-    image: '/images/react-course.jpg',
+    id: "course-1",
+    title: "React for Beginners",
+    description:
+      "Learn the basics of React, a popular JavaScript library for building user interfaces.",
+    content: "This is where the course content will go...",
+    image: "/images/react-course.jpg",
   };
 
   if (courseId !== course.id) {
@@ -33,6 +35,7 @@ const CourseDetails: React.FC = () => {
         <img className="w-full mb-8" src={course.image} alt={course.title} />
         <p className="text-xl mb-4">{course.description}</p>
         <div className="text-base text-gray-700">{course.content}</div>
+        <Enroll courseId={course.id}/>
       </div>
     </div>
   );
